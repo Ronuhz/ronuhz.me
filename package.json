@@ -3,15 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev ",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "babel-plugin-react-compiler": "^19.0.0-beta-decd7b8-20250118",
+    "next": "15.1.5",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.1.5"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "typescript": "^5",
