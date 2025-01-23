@@ -31,7 +31,7 @@ export default function Home() {
       </p>
 
       <p>
-        {"When I'm not coding, you'll catch me binge-watching quirky shows 🎬, attempting to cook (with varying success) 🍳, and daydreaming about my next creative project. I believe in turning wild ideas into reality, one small step at a time!"}
+        {"When I'm not coding, you'll catch me binge-watching quirky shows 🎬, attempting to learn Chinese (with varying success) 🍳, and daydreaming about my next creative project. I believe in turning wild ideas into reality, one small step at a time!"}
       </p>
     </main>
   );
