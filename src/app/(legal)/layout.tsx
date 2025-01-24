@@ -22,7 +22,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased min-h-screen font-sans`}
       >
-        <div className="max-w-3xl mx-auto flex flex-col min-h-screen px-4">
+        <div className="max-w-3xl mx-auto flex flex-col min-h-screen px-4 text-justify">
           {children}
           <Footer />
         </div>
