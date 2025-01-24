@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} antialiased min-h-fit font-sans md:pt-[30vh] px-4 select-none`}
+        className={`${inter.variable} antialiased min-h-fit font-sans md:pt-[25vh] px-4 select-none`}
       >
         <Sidebar />
         <div className="flex flex-col gap-12 max-w-[650px] mx-auto">

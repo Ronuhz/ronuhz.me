@@ -1,3 +1,5 @@
+import Banner from "@/components/banner";
+
 export default function Home() {
   return (
     <main className="flex flex-col gap-6 mb:pt-0">
@@ -33,6 +35,8 @@ export default function Home() {
       <p>
         {"When I'm not coding, you'll catch me binge-watching quirky shows 🎬, attempting to learn Chinese (with varying success), and daydreaming about my next creative project. I believe in turning wild ideas into reality, one small step at a time!"}
       </p>
+
+      <Banner />
     </main>
   );
 }
