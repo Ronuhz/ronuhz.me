@@ -29,4 +29,11 @@ export const projects: Project[] = [
     techStack: ["Swift", "SwiftUI", "SwiftData", "AIProxy", "OpenAI"],
     year: 2024
   },
+  {
+    name: "Next Social",
+    description: "X like social media site.",
+    github: "https://github.com/Ronuhz/next-social",
+    techStack: ["Next.js", "Typescript", "Tailwindcss", "NextAuth", "Prisma", "Planetscale"],
+    year: 2023
+  },
 ];
