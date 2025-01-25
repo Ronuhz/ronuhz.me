@@ -1,6 +1,5 @@
 import { GitHubIcon } from "./icons/github";
 import { MailIcon } from "./icons/mail";
-import { TwitterIcon } from "./icons/twitter";
 import { XIcon } from "./icons/x";
 
 export default function Footer() {
@@ -16,7 +15,6 @@ export default function Footer() {
         </a>
         <a href="https://twitter.com/ronuhz" className="hover:text-gruvbox-bright-blue transition-colors" target="_blank" rel="noopener noreferrer">
           <XIcon />
-          {/* <TwitterIcon /> */}
         </a>
         <a href="https://github.com/ronuhz" className="hover:text-gruvbox-bright-blue transition-colors" target="_blank" rel="noopener noreferrer">
           <GitHubIcon />
