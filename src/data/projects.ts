@@ -9,6 +9,13 @@ type Project = {
 
 export const projects: Project[] = [
   {
+    name: "(Not) Lost - SSC25",
+    description: "Learn about pathfinding algorithms in a fun way.",
+    github: "https://github.com/Ronuhz/Swift-Student-Challenge-2025",
+    techStack: ["Swift", "SwiftUI", "AVKit", "Observation"],
+    year: 2025
+  },
+  {
     name: "Spooky",
     description: "An AI image generation app with prompt enhancer.",
     appStore: "https://apps.apple.com/app/apple-store/id6740097249",
