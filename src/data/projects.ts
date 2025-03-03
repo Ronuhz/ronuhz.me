@@ -16,10 +16,10 @@ export const projects: Project[] = [
     year: 2025
   },
   {
-    name: "Spooky",
+    name: "Vivid",
     description: "An AI image generation app with prompt enhancer.",
     appStore: "https://apps.apple.com/app/apple-store/id6740097249",
-    techStack: ["Swift", "SwiftUI", "SwiftData", "AIProxy", "Replicate", "OpenAI"],
+    techStack: ["Swift", "SwiftUI", "SwiftData", "AIProxy", "Replicate", "Fal.ai", "OpenAI"],
     year: 2025
   },
   {
