@@ -5,6 +5,7 @@ type Project = {
   appStore?: string;
   techStack: string[];
   year: number;
+  winner?: string;
 }
 
 export const projects: Project[] = [
@@ -13,7 +14,8 @@ export const projects: Project[] = [
     description: "Learn about pathfinding algorithms in a fun way.",
     github: "https://github.com/Ronuhz/Swift-Student-Challenge-2025",
     techStack: ["Swift", "SwiftUI", "AVKit", "Observation"],
-    year: 2025
+    year: 2025,
+    winner: "Swift Student Challenge 2025"
   },
   {
     name: "Vivid",

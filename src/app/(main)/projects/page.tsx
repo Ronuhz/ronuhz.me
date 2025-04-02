@@ -1,5 +1,6 @@
 import { projects } from "@/data/projects";
 import { ExternalLinkIcon } from "@/components/icons/external-link";
+import { TrophyIcon } from "@/components/icons/trophy";
 
 export default function Projects() {
   return (
@@ -11,6 +12,15 @@ export default function Projects() {
               {project.name}
             </h2>
             <div className="flex gap-2">
+            {project.winner && (
+                <div 
+                  className="text-gruvbox-bright-yellow hover:text-gruvbox-yellow text-sm transition-colors flex items-center gap-1"
+                  title={project.winner}
+                >
+                  <TrophyIcon size={14} />
+                  <span>Winner</span>
+                </div>
+              )}
             {project.appStore && (
                 <a 
                   href={project.appStore}
