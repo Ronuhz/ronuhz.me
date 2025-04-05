@@ -73,7 +73,7 @@ export default function SpookyPrivacyPolicy() {
             <li>The transformed image is sent back to AIProxy, which in turn relays the results to the user within the Application.</li>
           </ul>
           <PolicyParagraph>
-            It is important to note that while the image is processed by GeminiAPI, the Operator does not have direct access to the user images or transformed results. The image processing is conducted solely for the purpose of providing the user with the requested service, and any data transmitted is handled according to GeminiAPI's and AIProxy's privacy policies. Users are encouraged to review the{' '}
+            It is important to note that while the image is processed by GeminiAPI, the Operator does not have direct access to the user images or transformed results. The image processing is conducted solely for the purpose of providing the user with the requested service, and any data transmitted is handled according to GeminiAPI&apos;s and AIProxy&apos;s privacy policies. Users are encouraged to review the{' '}
             <PolicyLink href="https://ai.google.dev/gemini-api/terms">GeminiAPI Terms</PolicyLink>{' '}and the{' '}
             <PolicyLink href="https://www.aiproxy.pro/privacy.html">AIProxy Privacy Policy</PolicyLink>.
           </PolicyParagraph>
