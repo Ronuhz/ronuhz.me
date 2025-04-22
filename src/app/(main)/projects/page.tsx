@@ -11,7 +11,7 @@ export default function Projects() {
       <div className="space-y-4 max-w-2xl">
         <h2 className="text-xl font-bold text-gruvbox-fg">Projects</h2>
         <p className="text-gruvbox-fg3">
-          A collection of my personal and professional projects. Check out what I've been building!
+          A collection of my personal and professional projects. Check out what I&apos;ve been building!
         </p>
       </div>
       
