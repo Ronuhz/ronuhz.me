@@ -1,8 +1,10 @@
-import Banner from "@/components/banner";
+import Header from "@/components/header";
 
 export default function Home() {
   return (
     <main className="flex flex-col gap-6 mb:pt-0">
+      <Header />
+      
       <p>
         {"Hey! I'm a student 👨‍💻 from "}
         <a 
@@ -35,8 +37,6 @@ export default function Home() {
       <p>
         {"When I'm not coding, you'll catch me binge-watching quirky shows 🎬 or daydreaming about my next creative project. I believe in turning wild ideas into reality, one small step at a time!"}
       </p>
-
-      <Banner />
     </main>
   );
 }

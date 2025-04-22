@@ -1,10 +1,20 @@
 import { projects } from "@/data/projects";
 import { ExternalLinkIcon } from "@/components/icons/external-link";
 import { TrophyIcon } from "@/components/icons/trophy";
+import Header from "@/components/header";
 
 export default function Projects() {
   return (
-    <main className="flex flex-col gap-8 ">
+    <main className="flex flex-col gap-6 mb:pt-0">
+      <Header />
+      
+      <div className="space-y-4 max-w-2xl">
+        <h2 className="text-xl font-bold text-gruvbox-fg">Projects</h2>
+        <p className="text-gruvbox-fg3">
+          A collection of my personal and professional projects. Check out what I've been building!
+        </p>
+      </div>
+      
       {projects.map((project) => (
         <div key={project.name} className="flex flex-col gap-4 pb-8 border-b border-gruvbox-fg/10 last:border-b-0 last:pb-0">
           <div className="flex items-center gap-4">

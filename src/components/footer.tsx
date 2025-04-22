@@ -4,7 +4,7 @@ import { XIcon } from "./icons/x";
 
 export default function Footer() {
   return (
-    <footer className="flex opacity-50 mt-auto pt-24 pb-4">
+    <footer className="flex opacity-50 mt-auto pt-12 pb-4">
       <p className="whitespace-nowrap font-sans text-gruvbox-fg">
         © {new Date().getFullYear()} Zoltáni Hunor
       </p>

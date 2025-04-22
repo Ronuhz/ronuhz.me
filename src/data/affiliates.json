@@ -1,0 +1,18 @@
+{
+  "affiliates": [
+    {
+      "id": "astro",
+      "name": "Astro",
+      "description": "Boost your App Store rankings and improve visibility",
+      "link": "https://tryastro.app?aff=EXOEk",
+      "icon": "/AstroIcon.webp"
+    },
+    {
+      "id": "rudrank-academy",
+      "name": "Rudrank Academy",
+      "description": "Learn AI assisted iOS Development",
+      "link": "https://academy.rudrank.com/a/tkmbzghynjm_mvqtoposp",
+      "icon": "/RudrankIcon.webp"
+    }
+  ]
+} 
