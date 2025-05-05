@@ -5,7 +5,7 @@ import { PolicyLink } from '@/components/policy/policy-link';
 
 export default function ToyzPrivacyPolicy() {
   const lastUpdated = 'April 26, 2025';
-  const appName = 'ToyKit';
+  const appName = 'Toyify';
   const developerName = 'Zoltáni Hunor';
 
   return (
