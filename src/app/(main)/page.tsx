@@ -2,14 +2,15 @@ import Header from "@/components/header";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-6 mb:pt-0">
+    <main className="flex flex-col gap-10">
       <Header />
-      
-      <p>
+
+      <section className="space-y-4 text-lg leading-relaxed">
+        <p>
         {"Hey! I'm a student 👨‍💻 from "}
-        <a 
-          href="https://www.google.com/maps/place/Sfântu+Gheorghe,+Romania" 
-          target="_blank" 
+        <a
+          href="https://www.google.com/maps/place/Sfântu+Gheorghe,+Romania"
+          target="_blank"
           rel="noopener noreferrer"
           className="text-gruvbox-bright-blue hover:text-gruvbox-blue transition-colors"
         >
@@ -37,6 +38,7 @@ export default function Home() {
       <p>
         {"When I'm not coding, you'll catch me binge-watching quirky shows 🎬 or daydreaming about my next creative project. I believe in turning wild ideas into reality, one small step at a time!"}
       </p>
+      </section>
     </main>
   );
 }

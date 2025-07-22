@@ -1,6 +1,6 @@
 # ronuhz.me
 
-My personal portfolio website built with Next.js and Tailwind CSS, featuring a clean and minimalist design with the Gruvbox color scheme.
+My personal portfolio website built with Next.js and Tailwind CSS, featuring a clean and minimalist design with the Nord color scheme.
 
 ## Tech Stack
 
