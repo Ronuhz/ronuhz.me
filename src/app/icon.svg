@@ -1,0 +1,17 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="32" height="32" fill="white"/>
+  
+  <!-- Main border -->
+  <rect x="2" y="2" width="28" height="28" fill="white" stroke="black" stroke-width="2"/>
+  
+  <!-- Inner content with H -->
+  <rect x="6" y="8" width="4" height="16" fill="black"/>
+  <rect x="22" y="8" width="4" height="16" fill="black"/>
+  <rect x="10" y="14" width="12" height="4" fill="black"/>
+  
+  <!-- Red accent shadow -->
+  <rect x="8" y="10" width="4" height="16" fill="#ff2e2e"/>
+  <rect x="24" y="10" width="4" height="16" fill="#ff2e2e"/>
+  <rect x="12" y="16" width="12" height="4" fill="#ff2e2e"/>
+</svg>
