@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import "./globals.css";
-import LegalFooter from "@/components/legal-footer";
-import RevealInit from "@/components/reveal-init";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,14 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${mono.variable} antialiased min-h-screen font-mono`}
-      >
-        <div className="max-w-3xl mx-auto flex flex-col min-h-screen px-4">
-          <RevealInit />
-          {children}
-          <LegalFooter />
-        </div>
+      <body className={`${inter.variable} ${mono.variable} antialiased min-h-fit font-mono`}>
+        {children}
       </body>
     </html>
   );

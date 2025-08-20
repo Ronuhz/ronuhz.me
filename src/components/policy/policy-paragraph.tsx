@@ -7,7 +7,7 @@ type PolicyParagraphProps = {
 
 export function PolicyParagraph({ children, className = '' }: PolicyParagraphProps) {
   return (
-    <p className={`text-gruvbox-fg/80 leading-relaxed ${className}`}>
+    <p className={`opacity-80 leading-relaxed ${className}`}>
       {children}
     </p>
   );

@@ -10,7 +10,7 @@ export function PolicyLink({ href, children }: PolicyLinkProps) {
    return (
     <Link 
       href={href}
-      className="text-gruvbox-bright-green hover:text-gruvbox-green transition-colors"
+      className="underline decoration-[var(--accent)] decoration-2 underline-offset-2 hover:decoration-4"
       target="_blank" 
       rel="noopener noreferrer"
     >

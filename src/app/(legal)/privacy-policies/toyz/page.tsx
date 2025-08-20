@@ -9,7 +9,7 @@ export default function ToyzPrivacyPolicy() {
   const developerName = 'Zoltáni Hunor';
 
   return (
-    <main className="max-w-3xl mx-auto py-8 px-4">
+    <main className="max-w-3xl mx-auto py-8 px-4 reveal-item is-visible">
       <h1 className="text-2xl font-bold text-gruvbox-fg mb-6">Privacy Policy</h1>
       <p className="text-gruvbox-fg/60 mb-8">Last Updated: {lastUpdated}</p>
 

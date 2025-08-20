@@ -9,9 +9,9 @@ export default function SpookyPrivacyPolicy() {
   const developerName = 'Zoltáni Hunor';
 
   return (
-    <main className="max-w-3xl mx-auto py-8 px-4">
-      <h1 className="text-2xl font-bold text-gruvbox-fg mb-6">Privacy Policy</h1>
-      <p className="text-gruvbox-fg/60 mb-8">Last Updated: {lastUpdated}</p>
+    <main className="max-w-3xl mx-auto py-8 px-4 reveal-item is-visible">
+      <h1 className="text-2xl font-bold uppercase mb-2">Privacy Policy</h1>
+      <p className="opacity-70 mb-8">Last Updated: {lastUpdated}</p>
 
       <section className="space-y-6">
         <PolicySection title="1. Introduction and Consent">
@@ -47,7 +47,7 @@ export default function SpookyPrivacyPolicy() {
           <PolicyParagraph>
             The Application may employ third-party services to provide functionality, which may necessitate access to certain personal information. The list of such third-party services is subject to change; users are advised to review this Policy regularly. As of the most recent update, the third-party services include:
           </PolicyParagraph>
-          <ul className="list-disc list-inside text-gruvbox-fg/80 space-y-2 ml-4">
+          <ul className="list-disc list-inside opacity-80 space-y-2 ml-4">
             <li>
               <PolicyLink href="https://www.revenuecat.com/privacy/">RevenueCat</PolicyLink>
             </li>
@@ -67,7 +67,7 @@ export default function SpookyPrivacyPolicy() {
           <PolicyParagraph>
             The Application allows users to transform their photos using AI-powered cartoon filters. When a user selects an image to transform, the following process occurs:
           </PolicyParagraph>
-          <ul className="list-disc list-inside text-gruvbox-fg/80 space-y-2 ml-4">
+          <ul className="list-disc list-inside opacity-80 space-y-2 ml-4">
             <li>The selected image is first transmitted to AIProxy, a service that acts as an intermediary between the Application and GeminiAPI. AIProxy masks the API key to protect it during the communication process.</li>
             <li>The image along with style information is then forwarded to GeminiAPI, where using AI models the image is transformed into the selected cartoon style.</li>
             <li>The transformed image is sent back to AIProxy, which in turn relays the results to the user within the Application.</li>

@@ -13,9 +13,9 @@ export default function Terms() {
   const developerName = 'Zoltáni Hunor';
 
   return (
-    <main className="max-w-3xl mx-auto py-8 px-4">
-      <h1 className="text-2xl font-bold text-gruvbox-fg mb-6">Terms of Use</h1>
-      <p className="text-gruvbox-fg/60 mb-8">Last Updated: {lastUpdated}</p>
+    <main className="max-w-3xl mx-auto py-8 px-4 reveal-item is-visible">
+      <h1 className="text-2xl font-bold uppercase mb-2 reveal-item">Terms of Use</h1>
+      <p className="opacity-70 mb-8 reveal-item">Last Updated: {lastUpdated}</p>
 
       <section className="space-y-6">
         <PolicySection title="1. Acceptance of Terms">
@@ -28,7 +28,7 @@ export default function Terms() {
           <PolicyParagraph>
             You are granted a limited, revocable, non-exclusive, non-transferable license to use the Apps solely for personal, non-commercial purposes. Under this license, you must not:
           </PolicyParagraph>
-          <ul className="list-disc list-inside text-gruvbox-fg/80 space-y-2 ml-4">
+          <ul className="list-disc list-inside opacity-80 space-y-2 ml-4">
             <li>Modify, duplicate, or distribute the content or software provided by the Apps;</li>
             <li>Use the Apps for any commercial purpose or any public display;</li>
             <li>Attempt to decompile, reverse engineer, or extract source code from the Apps;</li>

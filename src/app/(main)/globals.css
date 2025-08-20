@@ -3,19 +3,146 @@
 @tailwind utilities;
 
 :root {
-  --background: #282828;
-  --foreground: #ebdbb2;
+  --background: #ffffff;
+  --foreground: #000000;
+  --accent: #ff2e2e;
+  --grid: rgba(0,0,0,0.06);
+  --border: #000000;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #282828;
-    --foreground: #ebdbb2;
-  }
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #f5f5f5;
+  --accent: #ff3b3b;
+  --grid: rgba(255,255,255,0.08);
+  --border: #f5f5f5;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    linear-gradient(var(--background), var(--background)),
+    repeating-linear-gradient(to right, transparent 0 23px, var(--grid) 23px 24px),
+    repeating-linear-gradient(to bottom, transparent 0 23px, var(--grid) 23px 24px);
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  letter-spacing: 0.01em;
+  cursor: crosshair;
+}
+
+::selection {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+@layer components {
+  .brutal-card {
+    @apply border-4 p-4 relative;
+    background: var(--background);
+    border-color: var(--border);
+    box-shadow: 6px 6px 0 0 var(--border);
+    transition: transform .15s ease, box-shadow .15s ease, opacity .3s ease !important;
+    transition-delay: 0s !important;
+    will-change: transform, box-shadow;
+  }
+  .brutal-card::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    z-index: -1;
+  }
+  .brutal-card:hover { transform: translate(-6px, -6px) rotate(-1deg) !important; box-shadow: 16px 16px 0 0 var(--border) !important; }
+  .brutal-card:active { transform: translate(2px, 2px) !important; box-shadow: 2px 2px 0 0 var(--border) !important; }
+  .brutal-button {
+    @apply border-4 px-3 py-1 inline-flex items-center gap-2 uppercase text-sm tracking-wide relative;
+    background: var(--background);
+    border-color: var(--border);
+    box-shadow: 4px 4px 0 0 var(--border);
+    transition: transform .1s ease, box-shadow .1s ease;
+  }
+  .brutal-button::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    z-index: -1;
+  }
+  .brutal-button:hover { transform: translate(-4px, -4px); box-shadow: 10px 10px 0 0 var(--border); }
+  .brutal-button:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 0 var(--border); }
+  .brutal-chip {
+    @apply border-4 px-3 py-1 uppercase text-xs tracking-wider;
+    background: var(--background);
+    border-color: var(--border);
+    box-shadow: 4px 4px 0 0 var(--border);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .brutal-chip--dashed {
+    @apply border-dashed;
+  }
+  .brutal-label {
+    @apply border-4 text-white px-3 py-1 uppercase text-xs md:text-sm font-black tracking-widest inline-block;
+    background: var(--accent);
+    border-color: var(--border);
+    box-shadow: 4px 4px 0 0 var(--border);
+  }
+  .brutal-section {
+    @apply border-4 p-4 md:p-6;
+    background: var(--background);
+    border-color: var(--border);
+    box-shadow: 6px 6px 0 0 var(--border);
+  }
+  .logo-wrap {
+    @apply relative inline-block leading-none;
+  }
+  .logo-fill {
+    @apply absolute inset-0 text-[var(--accent)];
+    transform: translate(6px, 6px);
+    animation: misprint 5s ease-in-out infinite;
+  }
+  .logo-outline {
+    color: transparent;
+    -webkit-text-stroke: 3px var(--border);
+    text-stroke: 3px var(--border);
+  }
+  /* Concept wordmark */
+  .wordmark {
+    -webkit-text-stroke: 2px var(--foreground);
+    color: transparent;
+    text-shadow: 6px 6px 0 var(--accent);
+    text-transform: uppercase;
+    line-height: .9;
+    animation: misprint 5s ease-in-out infinite;
+  }
+  @keyframes misprint {
+    0%,100% { text-shadow: 6px 6px 0 var(--accent); }
+    40% { text-shadow: 5px 7px 0 var(--accent); }
+    60% { text-shadow: 8px 5px 0 var(--accent); }
+  }
+
+  /* Marquee strip */
+  .marquee { @apply overflow-hidden; }
+  .marquee-track { display: inline-block; white-space: nowrap; animation: marquee 28s linear infinite; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* Reveal helpers */
+  .reveal-item { transform: translateY(8px); opacity: 0; }
+  .reveal-item.is-visible { transform: none; opacity: 1; }
+  .reveal-item { transition: transform .25s ease, opacity .25s ease; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-fill, .wordmark { animation: none; }
+    .marquee-track { animation: none; }
+    .brutal-card, .brutal-chip, .brutal-button { transition: none; }
+    .brutal-button:hover, .brutal-button:active { transform: none; box-shadow: 4px 4px 0 0 #000; }
+    .reveal-item { transition: none; transform: none !important; opacity: 1 !important; }
+  }
 }
