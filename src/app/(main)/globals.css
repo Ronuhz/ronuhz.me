@@ -41,7 +41,7 @@ body {
 
 @layer components {
   .brutal-card {
-    @apply border-4 p-4 relative;
+    @apply border-4 p-3 sm:p-4 relative;
     background: var(--background);
     border-color: var(--border);
     box-shadow: 6px 6px 0 0 var(--border);
@@ -60,8 +60,12 @@ body {
   }
   .brutal-card:hover { transform: translate(-6px, -6px) rotate(-1deg) !important; box-shadow: 16px 16px 0 0 var(--border) !important; }
   .brutal-card:active { transform: translate(2px, 2px) !important; box-shadow: 2px 2px 0 0 var(--border) !important; }
+  @media (hover: none) and (pointer: coarse) {
+    .brutal-card:hover { transform: none !important; box-shadow: 6px 6px 0 0 var(--border) !important; }
+    .brutal-card:active { transform: translate(-3px, -3px) !important; box-shadow: 12px 12px 0 0 var(--border) !important; }
+  }
   .brutal-button {
-    @apply border-4 px-3 py-1 inline-flex items-center gap-2 uppercase text-sm tracking-wide relative;
+    @apply border-4 px-2 py-1 sm:px-3 inline-flex items-center gap-1 sm:gap-2 uppercase text-xs sm:text-sm tracking-wide relative;
     background: var(--background);
     border-color: var(--border);
     box-shadow: 4px 4px 0 0 var(--border);
@@ -78,8 +82,12 @@ body {
   }
   .brutal-button:hover { transform: translate(-4px, -4px); box-shadow: 10px 10px 0 0 var(--border); }
   .brutal-button:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 0 var(--border); }
+  @media (hover: none) and (pointer: coarse) {
+    .brutal-button:hover { transform: none; box-shadow: 4px 4px 0 0 var(--border); }
+    .brutal-button:active { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 0 var(--border); }
+  }
   .brutal-chip {
-    @apply border-4 px-3 py-1 uppercase text-xs tracking-wider;
+    @apply border-4 px-2 py-1 sm:px-3 uppercase text-xs tracking-wider;
     background: var(--background);
     border-color: var(--border);
     box-shadow: 4px 4px 0 0 var(--border);
@@ -89,13 +97,13 @@ body {
     @apply border-dashed;
   }
   .brutal-label {
-    @apply border-4 text-white px-3 py-1 uppercase text-xs md:text-sm font-black tracking-widest inline-block;
+    @apply border-4 text-white px-2 py-1 sm:px-3 uppercase text-xs md:text-sm font-black tracking-widest inline-block;
     background: var(--accent);
     border-color: var(--border);
     box-shadow: 4px 4px 0 0 var(--border);
   }
   .brutal-section {
-    @apply border-4 p-4 md:p-6;
+    @apply border-4 p-3 sm:p-4 md:p-6;
     background: var(--background);
     border-color: var(--border);
     box-shadow: 6px 6px 0 0 var(--border);
@@ -120,7 +128,6 @@ body {
     text-shadow: 6px 6px 0 var(--accent);
     text-transform: uppercase;
     line-height: .9;
-    animation: misprint 5s ease-in-out infinite;
   }
   @keyframes misprint {
     0%,100% { text-shadow: 6px 6px 0 var(--accent); }
@@ -138,11 +145,35 @@ body {
   .reveal-item.is-visible { transform: none; opacity: 1; }
   .reveal-item { transition: transform .25s ease, opacity .25s ease; }
 
+  /* Mobile viewport adjustments */
+  @media (max-width: 640px) {
+    body {
+      background-size: 16px 16px;
+      background-image:
+        linear-gradient(var(--background), var(--background)),
+        repeating-linear-gradient(to right, transparent 0 15px, var(--grid) 15px 16px),
+        repeating-linear-gradient(to bottom, transparent 0 15px, var(--grid) 15px 16px);
+    }
+    .marquee-track { font-size: 0.875rem; }
+  }
+
+  /* Extra small mobile screens */
+  @media (max-width: 400px) {
+    .brutal-button {
+      @apply px-1 text-xs;
+      font-size: 0.65rem;
+      line-height: 1.2;
+    }
+    .wordmark {
+      font-size: 1.25rem !important;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .logo-fill, .wordmark { animation: none; }
     .marquee-track { animation: none; }
     .brutal-card, .brutal-chip, .brutal-button { transition: none; }
-    .brutal-button:hover, .brutal-button:active { transform: none; box-shadow: 4px 4px 0 0 #000; }
+    .brutal-button:hover, .brutal-button:active { transform: none; box-shadow: 4px 4px 0 0 var(--border); }
     .reveal-item { transition: none; transform: none !important; opacity: 1 !important; }
   }
 }

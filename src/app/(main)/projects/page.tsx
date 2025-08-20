@@ -17,19 +17,19 @@ export default function Projects() {
     return () => io.disconnect();
   }, []);
   return (
-    <main className="flex flex-col gap-8">
+    <main className="flex flex-col gap-4 sm:gap-6 md:gap-8">
       <section className="brutal-section">
-        <h2 className="text-xl md:text-2xl font-bold uppercase mb-2">Projects</h2>
+        <h2 className="text-lg sm:text-xl md:text-2xl font-bold uppercase mb-2">Projects</h2>
         <p className="opacity-80">A collection of personal and professional work.</p>
       </section>
 
-      <section className="grid md:grid-cols-2 gap-4">
+      <section className="grid sm:grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
         {projects.map((project) => (
           <div key={project.name} className="brutal-card reveal-item group h-full">
             <div className="flex flex-col h-full">
               <div className="flex items-start gap-3">
                 <div className="flex-1">
-                  <h3 className="text-lg md:text-xl font-bold uppercase leading-tight">{project.name}</h3>
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold uppercase leading-tight">{project.name}</h3>
                   <div className="flex items-center gap-2 mt-1 flex-wrap">
                     <span className="brutal-chip text-[10px]">{project.year}</span>
                     {project.winner && (
@@ -43,7 +43,7 @@ export default function Projects() {
               
               <div className="flex-1 flex flex-col justify-between mt-3">
                 <div className="space-y-3">
-                  <p className="text-sm opacity-80 leading-relaxed min-h-[2.5rem]">{project.description}</p>
+                  <p className="text-xs sm:text-sm opacity-80 leading-relaxed min-h-[2.5rem]">{project.description}</p>
                   
                   <div className="flex gap-2 flex-wrap">
                     {project.techStack.slice(0, 4).map((tech) => (

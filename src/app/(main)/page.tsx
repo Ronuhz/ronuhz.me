@@ -22,7 +22,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col gap-8">
+    <main className="flex flex-col gap-4 sm:gap-6 md:gap-8">
       <Header />
 
       <section className="brutal-section marquee" aria-label="Spec Sheet">
@@ -39,8 +39,8 @@ export default function Home() {
       </section>
 
       <section className="brutal-section">
-        <h3 className="text-xl md:text-2xl font-bold uppercase mb-4">Selected Work</h3>
-        <div className="grid md:grid-cols-2 gap-4">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-bold uppercase mb-3 sm:mb-4">Selected Work</h3>
+        <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
           {[
             { 
               title: "Lumenis", 
@@ -79,7 +79,7 @@ export default function Home() {
               <div className="space-y-3">
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
-                    <h4 className="text-lg md:text-xl font-bold uppercase leading-tight">{item.title}</h4>
+                    <h4 className="text-base sm:text-lg md:text-xl font-bold uppercase leading-tight">{item.title}</h4>
                     <div className="flex items-center gap-2 mt-1">
                       <span className="brutal-chip text-[10px]">{item.platform}</span>
                       <span className="brutal-chip text-[10px]">{item.year}</span>
@@ -103,9 +103,9 @@ export default function Home() {
         <div className="mb-3">
           <span className="brutal-label">Motto</span>
         </div>
-        <blockquote className="text-lg md:text-xl leading-snug">
+        <blockquote className="text-base sm:text-lg md:text-xl leading-snug">
           <p>&ldquo;I don&apos;t build in order to have clients. I have clients in order to build.&rdquo;</p>
-          <p className="opacity-70 mt-2">– Howard Roark, The Fountainhead</p>
+          <p className="opacity-70 mt-2 text-sm sm:text-base">– Howard Roark, The Fountainhead</p>
         </blockquote>
       </section>
 
