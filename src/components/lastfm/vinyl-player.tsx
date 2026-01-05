@@ -245,6 +245,7 @@ export default function VinylPlayer() {
         `}
         style={{ boxShadow: "2px 2px 0 var(--border)" }}
       >
+        <p className="text-[7px] sm:text-[8px] uppercase tracking-widest opacity-60 mb-0.5">Hunor is listening to</p>
         <MarqueeText text={data.title || ""} className="font-bold text-[10px] sm:text-xs" />
         <MarqueeText text={data.artist || ""} className="text-[8px] sm:text-[10px] opacity-80" />
       </div>
