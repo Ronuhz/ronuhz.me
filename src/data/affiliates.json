@@ -13,6 +13,13 @@
       "description": "Learn AI assisted iOS Development",
       "link": "https://academy.rudrank.com/a/tkmbzghynjm_mvqtoposp",
       "icon": "/RudrankIcon.webp"
+    },
+    {
+      "id": "raycast",
+      "name": "Raycast",
+      "description": "Supercharge your productivity with Raycast (10% discount)",
+      "link": "https://raycast.com/?via=hunor",
+      "icon": "/RaycastIcon.webp"
     }
   ]
 } 

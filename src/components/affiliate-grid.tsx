@@ -18,7 +18,7 @@ export default function AffiliateGrid() {
                 src={affiliate.icon}
                 alt={`${affiliate.name} Icon`}
                 fill
-                className="object-contain"
+                className={`object-contain ${affiliate.id === 'rudrank-academy' ? 'dark:invert' : ''}`}
               />
             </div>
             <div className="flex-1 space-y-1">
