@@ -1,25 +1,34 @@
-import { GitHubIcon } from "./icons/github";
-import { MailIcon } from "./icons/mail";
-import { XIcon } from "./icons/x";
-
 export default function Footer() {
+  const currentYear = new Date().getFullYear()
+
+  const links = [
+    { href: 'mailto:ronuhz@gmail.com', label: 'mail' },
+    { href: 'https://x.com/ronuhz', label: 'x / twitter' },
+    { href: 'https://github.com/Ronuhz', label: 'github' },
+    { href: 'https://linkedin.com/in/hunor-zoltani', label: 'linkedin' }
+  ]
+
   return (
-    <footer className="mt-6 sm:mt-8 md:mt-10">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
-          <p className="text-xs sm:text-sm whitespace-nowrap">© {new Date().getFullYear()} Zoltáni Hunor</p>
-          <div className="grow" />
-          <div className="flex items-center justify-start sm:justify-center gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm">
-            <a href="mailto:contact@ronuhz.me" className="brutal-button" target="_blank" rel="noopener noreferrer">
-              <MailIcon /> <span className="hidden sm:inline">Mail</span>
-            </a>
-            <a href="https://twitter.com/ronuhz" className="brutal-button" target="_blank" rel="noopener noreferrer" aria-label="X profile">
-              <XIcon />
-            </a>
-            <a href="https://github.com/ronuhz" className="brutal-button" target="_blank" rel="noopener noreferrer">
-              <GitHubIcon /> <span className="hidden sm:inline">GitHub</span>
-            </a>
-          </div>
+    <footer className="border-t border-[var(--border)] mt-16 pt-6 pb-12 text-xs text-[var(--muted)]">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <p>© {currentYear} Hunor Zoltáni</p>
+        <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+          {links.map(({ href, label }) => {
+            const isMail = href.startsWith('mailto:')
+            return (
+              <a
+                key={label}
+                href={href}
+                target={isMail ? undefined : '_blank'}
+                rel={isMail ? undefined : 'noopener noreferrer'}
+                className="hover:text-[var(--foreground)] transition-colors underline underline-offset-4 decoration-transparent hover:decoration-current"
+              >
+                {label}
+              </a>
+            )
+          })}
         </div>
+      </div>
     </footer>
   )
 }

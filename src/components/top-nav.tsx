@@ -1,66 +1,87 @@
-"use client"
+'use client'
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { ThemeIcon } from "./icons/theme";
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function TopNav() {
-  const pathname = usePathname();
-  const toggleTheme = () => {
-    if (typeof document === 'undefined') return;
-    const root = document.documentElement;
-    const isDark = root.getAttribute('data-theme') === 'dark';
-    const next = isDark ? '' : 'dark';
-    if (next) {
-      root.setAttribute('data-theme', next);
-    } else {
-      root.removeAttribute('data-theme');
+  const pathname = usePathname()
+  const [theme, setTheme] = useState<'light' | 'dark'>('light')
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+    const computeTheme = (): 'light' | 'dark' => {
+      try {
+        const saved = localStorage.getItem('theme')
+        if (saved === 'dark' || saved === 'light') return saved
+      } catch {}
+      const attr = document.documentElement.getAttribute('data-theme')
+      if (attr === 'dark' || attr === 'light') return attr
+      return mediaQuery.matches ? 'dark' : 'light'
     }
-    try { localStorage.setItem('theme', next || 'light'); } catch {}
-  };
-  if (typeof document !== 'undefined') {
-    const saved = typeof window !== 'undefined' ? localStorage.getItem('theme') : null;
-    if (saved === 'dark') document.documentElement.setAttribute('data-theme','dark');
+
+    setTheme(computeTheme())
+
+    const handleMediaChange = (e: MediaQueryListEvent) => {
+      try {
+        if (!localStorage.getItem('theme')) {
+          setTheme(e.matches ? 'dark' : 'light')
+        }
+      } catch {}
+    }
+
+    mediaQuery.addEventListener('change', handleMediaChange)
+    return () => mediaQuery.removeEventListener('change', handleMediaChange)
+  }, [])
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark'
+    setTheme(nextTheme)
+    document.documentElement.setAttribute('data-theme', nextTheme)
+    try {
+      localStorage.setItem('theme', nextTheme)
+    } catch {}
   }
 
-  const NavItem = ({ href, label }: { href: string; label: string }) => {
-    const isActive = pathname === href;
-    return (
-      <Link
-        href={href}
-        className={`brutal-button ${
-          isActive ? "bg-[var(--accent)] text-white" : ""
-        }`}
-      >
-        {label}
-      </Link>
-    );
-  };
+  const navLinks = [
+    { href: '/', label: 'about' },
+    { href: '/projects', label: 'projects' },
+    { href: '/affiliates', label: 'affiliates' }
+  ]
 
   return (
-    <header className="brutal-section">
-      <div className="flex items-center gap-2 sm:gap-4 md:gap-6">
-        <Link href="/" className="flex items-center">
-          <h1 className="wordmark text-2xl sm:text-3xl md:text-5xl font-black tracking-wide">HUNOR</h1>
-        </Link>
-        <div className="hidden md:block text-xs uppercase tracking-widest brutal-chip">
-          iOS Developer
+    <header className="border-b border-[var(--border)] pb-5 mb-10">
+      <nav className="flex items-center justify-between text-sm">
+        <div className="flex items-center gap-4 sm:gap-6">
+          {navLinks.map(({ href, label }) => {
+            const isActive = pathname === href
+            return (
+              <Link
+                key={href}
+                href={href}
+                className={`transition-colors ${
+                  isActive
+                    ? 'font-medium underline underline-offset-4'
+                    : 'text-[var(--muted)] hover:text-[var(--foreground)]'
+                }`}
+              >
+                {label}
+              </Link>
+            )
+          })}
         </div>
-        <div className="grow" />
-        <nav className="flex items-center gap-2 sm:gap-3 md:gap-4">
-          <NavItem href="/" label="About" />
-          <NavItem href="/projects" label="Work" />
-          <NavItem href="/affiliates" label="Affiliates" />
-          <button onClick={toggleTheme} className="brutal-button text-xs sm:text-sm" aria-pressed="false" aria-label="Toggle theme">
-            <span className="hidden sm:inline">Theme</span>
-            <span className="sm:hidden">
-              <ThemeIcon size={12} />
-            </span>
-          </button>
-        </nav>
-      </div>
+        <button
+          onClick={toggleTheme}
+          type="button"
+          className="text-[var(--muted)] hover:text-[var(--foreground)] transition-colors cursor-pointer"
+          aria-label="Toggle color theme"
+        >
+          {mounted ? (theme === 'dark' ? 'light' : 'dark') : 'theme'}
+        </button>
+      </nav>
     </header>
-  );
+  )
 }
-
-

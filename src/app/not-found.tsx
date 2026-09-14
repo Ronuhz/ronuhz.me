@@ -1,16 +1,19 @@
-import Link from "next/link";
-import "@/app/(main)/globals.css";
+import Link from 'next/link'
+import '@/app/(main)/globals.css'
 
 export default function NotFound() {
-	return (
-		<div className="min-h-screen flex items-center justify-center px-4">
-			<section className="brutal-section max-w-lg">
-				<h1 className="text-2xl md:text-3xl font-bold uppercase whitespace-nowrap">Page Not Found</h1>
-				<p className="opacity-80 mt-2">The page you&apos;re looking for doesn&apos;t exist.</p>
-				<div className="mt-4">
-					<Link href="/" className="brutal-button">Back to Home</Link>
-				</div>
-			</section>
-		</div>
-	);
+  return (
+    <main className="min-h-screen flex flex-col items-center justify-center px-6 text-center space-y-4 font-mono">
+      <h1 className="text-4xl font-semibold tracking-tight">404</h1>
+      <p className="text-sm text-[var(--muted)]">The page you are looking for does not exist.</p>
+      <div className="pt-2">
+        <Link
+          href="/"
+          className="text-sm underline underline-offset-4 hover:opacity-70 transition-opacity"
+        >
+          ← return home
+        </Link>
+      </div>
+    </main>
+  )
 }

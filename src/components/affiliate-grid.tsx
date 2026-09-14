@@ -1,38 +1,39 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import affiliateData from '@/data/affiliates.json';
+import Image from 'next/image'
+import affiliateData from '@/data/affiliates.json'
 
 export default function AffiliateGrid() {
   return (
-    <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+    <div className="divide-y divide-[var(--border)]">
       {affiliateData.affiliates.map((affiliate) => (
-        <Link
+        <a
           key={affiliate.id}
           href={affiliate.link}
           target="_blank"
-          className="brutal-card group"
+          rel="noopener noreferrer"
+          className="group flex items-start gap-4 py-4 first:pt-0 last:pb-0 hover:opacity-80 transition-opacity"
         >
-          <div className="flex items-center gap-4">
-            <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex-shrink-0 border-4 border-black">
-              <Image
-                src={affiliate.icon}
-                alt={`${affiliate.name} Icon`}
-                fill
-                className={`object-contain ${affiliate.id === 'rudrank-academy' ? 'dark:invert' : ''}`}
-              />
-            </div>
-            <div className="flex-1 space-y-1">
-              <h2 className="text-sm sm:text-base font-bold uppercase">{affiliate.name}</h2>
-              <p className="text-xs sm:text-sm opacity-80">
-                {affiliate.description}
-              </p>
-            </div>
-            <div className="transition-transform group-hover:translate-x-1">
-              →
-            </div>
+          <div className="relative w-10 h-10 flex-shrink-0 border border-[var(--border)] bg-[var(--background)] overflow-hidden">
+            <Image
+              src={affiliate.icon}
+              alt={`${affiliate.name} icon`}
+              fill
+              className={`object-contain p-1 ${
+                affiliate.id === 'rudrank-academy' ? 'dark-invert' : ''
+              }`}
+            />
           </div>
-        </Link>
+          <div className="flex-1 space-y-1 min-w-0">
+            <div className="flex items-baseline justify-between gap-2">
+              <h3 className="font-medium text-sm group-hover:underline underline-offset-4">
+                {affiliate.name} ↗
+              </h3>
+            </div>
+            <p className="text-xs sm:text-sm text-[var(--muted)] leading-relaxed">
+              {affiliate.description}
+            </p>
+          </div>
+        </a>
       ))}
     </div>
-  );
-} 
+  )
+}

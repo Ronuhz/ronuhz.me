@@ -1,79 +1,106 @@
-"use client";
-import { projects } from "@/data/projects";
-import { ExternalLinkIcon } from "@/components/icons/external-link";
-import { TrophyIcon } from "@/components/icons/trophy";
-import { useEffect } from "react";
+import type { Metadata } from 'next'
+import { projects } from '@/data/projects'
+
+export const metadata: Metadata = {
+  title: 'Projects',
+  description:
+    'Native iOS applications, Swift Student Challenge winner project, systems software, and web projects by Hunor Zoltáni.',
+  alternates: {
+    canonical: '/projects'
+  }
+}
 
 export default function Projects() {
-  useEffect(() => {
-    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return;
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal-item').forEach((el, i) => {
-      (el as HTMLElement).style.transitionDelay = `${i * 70}ms`;
-      io.observe(el);
-    });
-    return () => io.disconnect();
-  }, []);
   return (
-    <main className="flex flex-col gap-4 sm:gap-6 md:gap-8">
-      <section className="brutal-section">
-        <h2 className="text-lg sm:text-xl md:text-2xl font-bold uppercase mb-2">Projects</h2>
-        <p className="opacity-80">A collection of personal and professional work.</p>
+    <main className="space-y-10">
+      <section className="space-y-2">
+        <h1 className="text-xl sm:text-2xl font-semibold tracking-tight">Projects</h1>
+        <p className="text-sm text-[var(--muted)] leading-relaxed">
+          A selection of published iOS applications, contest-winning software, and low-level experiments.
+        </p>
       </section>
 
-      <section className="grid sm:grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-        {projects.map((project) => (
-          <div key={project.name} className="brutal-card reveal-item group h-full">
-            <div className="flex flex-col h-full">
-              <div className="flex items-start gap-3">
-                <div className="flex-1">
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold uppercase leading-tight">{project.name}</h3>
-                  <div className="flex items-center gap-2 mt-1 flex-wrap">
-                    <span className="brutal-chip text-[10px]">{project.year}</span>
-                    {project.winner && (
-                      <span className="brutal-chip text-[10px] bg-yellow-400 text-black border-yellow-400 inline-flex items-center gap-1">
-                        <TrophyIcon size={10} /> WINNER
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </div>
-              
-              <div className="flex-1 flex flex-col justify-between mt-3">
-                <div className="space-y-3">
-                  <p className="text-xs sm:text-sm opacity-80 leading-relaxed min-h-[2.5rem]">{project.description}</p>
-                  
-                  <div className="flex gap-2 flex-wrap">
-                    {project.techStack.slice(0, 4).map((tech) => (
-                      <span key={tech} className="brutal-chip text-[9px] opacity-70">{tech}</span>
-                    ))}
-                    {project.techStack.length > 4 && (
-                      <span className="brutal-chip text-[9px] opacity-70">+{project.techStack.length - 4}</span>
-                    )}
-                  </div>
-                </div>
+      <section aria-labelledby="all-projects-heading" className="space-y-6">
+        <div className="border-b border-[var(--border)] pb-2">
+          <h2 id="all-projects-heading" className="text-xs uppercase tracking-wider text-[var(--muted)] font-medium">
+            All Projects ({projects.length})
+          </h2>
+        </div>
 
-                {(project.appStore || project.github) && (
-                  <div className="flex gap-3 pt-3 mt-3 border-t-2 border-current">
-                    {project.appStore && (
-                      <a href={project.appStore} target="_blank" rel="noopener noreferrer" className="brutal-button text-xs bg-blue-500 text-white border-blue-500 hover:bg-blue-600">
-                        App Store <ExternalLinkIcon size={12} />
+        <div className="divide-y divide-[var(--border)]">
+          {projects.map((project) => (
+            <article key={project.name} className="py-5 first:pt-0 last:pb-0 space-y-2.5">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <div className="flex items-center gap-2.5">
+                  <h3 className="font-medium text-base">
+                    {project.appStore ? (
+                      <a
+                        href={project.appStore}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline underline-offset-4"
+                      >
+                        {project.name} ↗
                       </a>
-                    )}
-                    {project.github && (
-                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="brutal-button text-xs bg-gray-800 text-white border-gray-800 hover:bg-gray-900">
-                        GitHub <ExternalLinkIcon size={12} />
+                    ) : project.github ? (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline underline-offset-4"
+                      >
+                        {project.name} ↗
                       </a>
+                    ) : (
+                      project.name
                     )}
-                  </div>
-                )}
+                  </h3>
+                  {project.winner && (
+                    <span className="text-[11px] text-[var(--muted)] border border-[var(--border)] px-1.5 py-0.5">
+                      {project.winner}
+                    </span>
+                  )}
+                </div>
+                <span className="text-xs text-[var(--muted)] tabular-nums">
+                  {project.year}
+                </span>
               </div>
-            </div>
-          </div>
-        ))}
+
+              <p className="text-sm text-[var(--muted)] leading-relaxed">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap items-center justify-between gap-2 pt-1 text-xs">
+                <span className="text-[var(--muted)]">
+                  {project.techStack.join(' · ')}
+                </span>
+                <div className="flex items-center gap-3">
+                  {project.appStore && (
+                    <a
+                      href={project.appStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-4 hover:opacity-70 transition-opacity"
+                    >
+                      app store ↗
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-4 hover:opacity-70 transition-opacity"
+                    >
+                      source ↗
+                    </a>
+                  )}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
     </main>
-  );
+  )
 }
