@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { projects } from '@/data/projects'
+import DownloadIcon from '@/components/icons/download'
 
 export default function Home() {
   const featuredProjects = projects.filter((p) => p.featured).slice(0, 2)
@@ -17,6 +18,18 @@ export default function Home() {
         <p className="text-sm text-[var(--muted)] leading-relaxed">
           I design and build native, tactile applications with Swift, SwiftUI, and modern machine learning APIs. Interested in human-computer interfaces, performance, and low-level systems.
         </p>
+        <div className="pt-1">
+          <a
+            href="/Hunor_Zoltani_CV.pdf"
+            download="Hunor_Zoltani_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-[var(--border)] px-3 py-1.5 text-xs text-[var(--muted)] hover:text-[var(--foreground)] hover:border-[var(--border-hover)] transition-colors"
+          >
+            <DownloadIcon size={14} />
+            <span>download cv</span>
+          </a>
+        </div>
       </section>
 
       {/* Selected Work */}
@@ -84,10 +97,19 @@ export default function Home() {
 
       {/* Experience & Education */}
       <section aria-labelledby="background-heading" className="space-y-6">
-        <div className="border-b border-[var(--border)] pb-2">
+        <div className="flex items-center justify-between border-b border-[var(--border)] pb-2">
           <h2 id="background-heading" className="text-xs uppercase tracking-wider text-[var(--muted)] font-medium">
             Background
           </h2>
+          <a
+            href="/Hunor_Zoltani_CV.pdf"
+            download="Hunor_Zoltani_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-[var(--muted)] hover:text-[var(--foreground)] transition-colors underline underline-offset-4"
+          >
+            download cv ↓
+          </a>
         </div>
 
         <div className="space-y-4 text-sm">
@@ -158,6 +180,17 @@ export default function Home() {
               className="underline underline-offset-4 hover:opacity-70 transition-opacity"
             >
               x ↗
+            </a>
+          </li>
+          <li>
+            <a
+              href="/Hunor_Zoltani_CV.pdf"
+              download="Hunor_Zoltani_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:opacity-70 transition-opacity"
+            >
+              cv ↓
             </a>
           </li>
         </ul>

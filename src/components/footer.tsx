@@ -5,7 +5,8 @@ export default function Footer() {
     { href: 'mailto:ronuhz@gmail.com', label: 'mail' },
     { href: 'https://x.com/ronuhz', label: 'x / twitter' },
     { href: 'https://github.com/Ronuhz', label: 'github' },
-    { href: 'https://linkedin.com/in/hunor-zoltani', label: 'linkedin' }
+    { href: 'https://linkedin.com/in/hunor-zoltani', label: 'linkedin' },
+    { href: '/Hunor_Zoltani_CV.pdf', label: 'cv', download: true }
   ]
 
   return (
@@ -13,12 +14,13 @@ export default function Footer() {
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <p>© {currentYear} Hunor Zoltáni</p>
         <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-          {links.map(({ href, label }) => {
+          {links.map(({ href, label, download }) => {
             const isMail = href.startsWith('mailto:')
             return (
               <a
                 key={label}
                 href={href}
+                download={download ? 'Hunor_Zoltani_CV.pdf' : undefined}
                 target={isMail ? undefined : '_blank'}
                 rel={isMail ? undefined : 'noopener noreferrer'}
                 className="hover:text-[var(--foreground)] transition-colors underline underline-offset-4 decoration-transparent hover:decoration-current"
