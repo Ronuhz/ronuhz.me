@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: '%s — Hunor Zoltáni'
   },
   description:
-    'Hunor Zoltáni is an independent iOS engineer and Computer Science student from Cluj-Napoca, Romania. Apple Swift Student Challenge 2025 Winner. Creator of Lumenis, PantryKit, and Cartoon Yourself.',
+    'Hunor Zoltáni is an independent iOS engineer and Computer Science student from Cluj-Napoca, Romania. Apple Swift Student Challenge 2025 Winner. Creator of Lumenis.',
   applicationName: 'Hunor Zoltáni',
   authors: [{ name: 'Hunor Zoltáni', url: 'https://ronuhz.me' }],
   generator: 'Next.js',
@@ -40,8 +40,6 @@ export const metadata: Metadata = {
     'SwiftData',
     'Apple Swift Student Challenge 2025 Winner',
     'Lumenis',
-    'PantryKit',
-    'Cartoon Yourself',
     '(Not) Lost',
     'Cluj-Napoca Developer',
     'Babeș-Bolyai University',

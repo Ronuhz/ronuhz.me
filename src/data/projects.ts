@@ -31,38 +31,12 @@ export const projects: Project[] = [
     category: 'systems'
   },
   {
-    name: 'Cartoon Yourself: Toon',
-    description: 'Transform portraits into stylized artwork and anime aesthetics using on-device processing and Gemini API.',
-    appStore: 'https://apps.apple.com/app/apple-store/id6744258819',
-    techStack: ['Swift', 'SwiftUI', 'AIProxy', 'Gemini API'],
-    year: 2025,
-    featured: true,
-    category: 'ios'
-  },
-  {
     name: 'Lumenis',
     description: 'Tactile, native AI image generator built for iOS with fluid animations and fine-grained style controls.',
     appStore: 'https://apps.apple.com/app/apple-store/id6670686446',
     techStack: ['Swift', 'SwiftUI', 'SwiftData', 'AIProxy', 'Replicate'],
     year: 2024,
     featured: true,
-    category: 'ios'
-  },
-  {
-    name: 'PantryKit',
-    description: 'Smart inventory and grocery tracking app using on-device scanning and AI assistance to reduce kitchen food waste.',
-    appStore: 'https://apps.apple.com/app/apple-store/id6630380943',
-    techStack: ['Swift', 'SwiftUI', 'SwiftData', 'AIProxy', 'OpenAI'],
-    year: 2024,
-    featured: true,
-    category: 'ios'
-  },
-  {
-    name: 'Vivid',
-    description: 'Native AI image studio for iPhone featuring advanced prompt enhancement, style customization, and fast generation.',
-    appStore: 'https://apps.apple.com/app/apple-store/id6740097249',
-    techStack: ['Swift', 'SwiftUI', 'SwiftData', 'AIProxy', 'Replicate', 'Fal.ai'],
-    year: 2025,
     category: 'ios'
   },
   {
