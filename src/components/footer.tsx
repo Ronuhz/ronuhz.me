@@ -1,6 +1,6 @@
-export default function Footer() {
-  const currentYear = new Date().getFullYear()
+import CopyrightYear from '@/components/copyright-year'
 
+export default function Footer() {
   const links = [
     { href: 'mailto:ronuhz@gmail.com', label: 'mail' },
     { href: 'https://x.com/ronuhz', label: 'x / twitter' },
@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-[var(--border)] mt-16 pt-6 pb-12 text-xs text-[var(--muted)]">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <p>© {currentYear} Hunor Zoltáni</p>
+        <p>© <CopyrightYear /> Hunor Zoltáni</p>
         <div className="flex flex-wrap items-center gap-4 sm:gap-6">
           {links.map(({ href, label, download }) => {
             const isMail = href.startsWith('mailto:')
