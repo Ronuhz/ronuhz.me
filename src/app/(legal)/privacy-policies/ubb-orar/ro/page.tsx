@@ -2,18 +2,18 @@ import { PolicySection } from '@/components/policy/policy-section'
 import { PolicyParagraph } from '@/components/policy/policy-paragraph'
 import { PolicyLink } from '@/components/policy/policy-link'
 
-export const metadata = { title: 'UBB Orar — Politică de confidențialitate' }
+export const metadata = { title: 'Orar FMI — Politică de confidențialitate' }
 
-export default function UBBOrarPrivacyPolicy() {
+export default function OrarFMIPrivacyPolicy() {
   return (
     <main lang="ro" className="max-w-3xl mx-auto py-8 px-4 reveal-item is-visible">
       <h1 className="text-2xl font-bold uppercase mb-2">Politică de confidențialitate</h1>
-      <p className="opacity-70 mb-4">Ultima actualizare: 29 septembrie 2026</p>
+      <p className="opacity-70 mb-4">Ultima actualizare: 30 septembrie 2026</p>
       <p className="mb-8"><PolicyLink href="/privacy-policies/ubb-orar/en">English</PolicyLink></p>
       <section className="space-y-6">
         <PolicySection title="1. Introducere">
           <PolicyParagraph>
-            Prezenta Politică de confidențialitate descrie modul în care Zoltáni Hunor („Dezvoltatorul”), dezvoltatorul UBB Orar („Aplicația”), prelucrează informații atunci când utilizați Aplicația. Dezvoltatorul are calitatea de operator al datelor cu caracter personal prelucrate în scopurile Aplicației. Contact: contact@ronuhz.me.
+            Prezenta Politică de confidențialitate descrie modul în care Zoltáni Hunor („Dezvoltatorul”), dezvoltatorul Orar FMI („Aplicația”), prelucrează informații atunci când utilizați Aplicația. Dezvoltatorul are calitatea de operator al datelor cu caracter personal prelucrate în scopurile Aplicației. Contact: contact@ronuhz.me.
           </PolicyParagraph>
         </PolicySection>
         <PolicySection title="2. Profilul academic și stocarea locală">
@@ -68,7 +68,7 @@ export default function UBBOrarPrivacyPolicy() {
         </PolicySection>
         <PolicySection title="8. Serviciu independent, excluderea garanțiilor și limitarea răspunderii">
           <PolicyParagraph>
-            UBB Orar este o aplicație independentă și nu reprezintă un serviciu oficial al Universității Babeș-Bolyai, nu este aprobată de aceasta și nu este afiliată acesteia. Orarele, anunțurile, informațiile despre săli și conținutul aferent pot fi incomplete, neactualizate sau indisponibile. Verificați informațiile importante prin intermediul surselor oficiale ale universității.
+            Orar FMI este o aplicație independentă și nu reprezintă un serviciu oficial al Universității Babeș-Bolyai, nu este aprobată de aceasta și nu este afiliată acesteia. Orarele, anunțurile, informațiile despre săli și conținutul aferent pot fi incomplete, neactualizate sau indisponibile. Verificați informațiile importante prin intermediul surselor oficiale ale universității.
           </PolicyParagraph>
           <PolicyParagraph>
             În limita maximă permisă de legislația aplicabilă, Aplicația și conținutul acesteia sunt furnizate „ca atare” și „în funcție de disponibilitate”, fără garanții privind exactitatea, disponibilitatea, adecvarea pentru un anumit scop sau funcționarea neîntreruptă. Dezvoltatorul nu își asumă răspunderea pentru absențe de la activități didactice, erori ale orarului, oportunități pierdute, pierderi de date, întreruperi ale serviciului sau prejudicii indirecte ori consecvente rezultate din utilizarea Aplicației sau din încrederea acordată conținutului acesteia. Nicio prevedere a prezentei clauze nu exclude și nu limitează răspunderea care nu poate fi exclusă sau limitată în mod legal și nici drepturile imperative în materia protecției consumatorilor sau a protecției datelor.
