@@ -2,18 +2,18 @@ import { PolicySection } from '@/components/policy/policy-section'
 import { PolicyParagraph } from '@/components/policy/policy-paragraph'
 import { PolicyLink } from '@/components/policy/policy-link'
 
-export const metadata = { title: 'UBB Orar — Privacy Policy' }
+export const metadata = { title: 'Orar FMI — Privacy Policy' }
 
-export default function UBBOrarPrivacyPolicy() {
+export default function OrarFMIPrivacyPolicy() {
   return (
     <main lang="en" className="max-w-3xl mx-auto py-8 px-4 reveal-item is-visible">
       <h1 className="text-2xl font-bold uppercase mb-2">Privacy Policy</h1>
-      <p className="opacity-70 mb-4">Last Updated: September 29, 2026</p>
+      <p className="opacity-70 mb-4">Last Updated: September 30, 2026</p>
       <p className="mb-8"><PolicyLink href="/privacy-policies/ubb-orar/ro">Română</PolicyLink></p>
       <section className="space-y-6">
         <PolicySection title="1. Introduction">
           <PolicyParagraph>
-            This Privacy Policy explains how Zoltáni Hunor (the “Developer”), the developer of UBB Orar (the “Application”), processes information when you use the Application. The Developer is the controller of personal data processed for the Application. Contact: contact@ronuhz.me.
+            This Privacy Policy explains how Zoltáni Hunor (the “Developer”), the developer of Orar FMI (the “Application”), processes information when you use the Application. The Developer is the controller of personal data processed for the Application. Contact: contact@ronuhz.me.
           </PolicyParagraph>
         </PolicySection>
         <PolicySection title="2. Academic Profile and Local Storage">
@@ -68,7 +68,7 @@ export default function UBBOrarPrivacyPolicy() {
         </PolicySection>
         <PolicySection title="8. Independent Service, Disclaimer, and Limitation of Liability">
           <PolicyParagraph>
-            UBB Orar is an independent application and is not an official service of, endorsed by, or affiliated with Babeș-Bolyai University. Timetables, announcements, room information, and related content may be incomplete, outdated, or unavailable. Verify important information with official university sources.
+            Orar FMI is an independent application and is not an official service of, endorsed by, or affiliated with Babeș-Bolyai University. Timetables, announcements, room information, and related content may be incomplete, outdated, or unavailable. Verify important information with official university sources.
           </PolicyParagraph>
           <PolicyParagraph>
             To the maximum extent permitted by applicable law, the Application and its content are provided “as is” and “as available,” without warranties of accuracy, availability, fitness for a particular purpose, or uninterrupted operation. The Developer accepts no liability for missed classes, timetable errors, lost opportunities, loss of data, service interruptions, or indirect or consequential losses arising from use of the Application or reliance on its content. Nothing in this clause excludes or limits liability that cannot lawfully be excluded or limited, or any mandatory consumer or data protection rights.
