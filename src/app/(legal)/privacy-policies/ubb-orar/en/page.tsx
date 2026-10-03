@@ -26,7 +26,7 @@ export default function OrarFMIPrivacyPolicy() {
         </PolicySection>
         <PolicySection title="3. No Analytics or Tracking">
           <PolicyParagraph>
-            The Application does not use PostHog or any other analytics, tracking, advertising, telemetry, or profiling service. No usage events, device identifiers, screen views, feature interactions, course information, or other analytics data are collected by or sent to the Developer.
+            The Application does not use any analytics, tracking, advertising, telemetry, or profiling service. No usage events, device identifiers, screen views, feature interactions, course information, or other analytics data are collected by or sent to the Developer.
           </PolicyParagraph>
         </PolicySection>
         <PolicySection title="4. Timetable Data and Third-Party Services">
