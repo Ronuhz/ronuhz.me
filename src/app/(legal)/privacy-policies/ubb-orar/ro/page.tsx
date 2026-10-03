@@ -26,7 +26,7 @@ export default function OrarFMIPrivacyPolicy() {
         </PolicySection>
         <PolicySection title="3. Fără analiză sau urmărire">
           <PolicyParagraph>
-            Aplicația nu utilizează PostHog și niciun alt serviciu de analiză, urmărire, publicitate, telemetrie sau profilare. Nu sunt colectate de către Dezvoltator și nu sunt transmise către acesta evenimente de utilizare, identificatori ai dispozitivului, vizualizări de ecrane, interacțiuni cu funcționalitățile, informații despre discipline sau alte date de analiză.
+            Aplicația nu utilizează niciun serviciu de analiză, urmărire, publicitate, telemetrie sau profilare. Nu sunt colectate de către Dezvoltator și nu sunt transmise către acesta evenimente de utilizare, identificatori ai dispozitivului, vizualizări de ecrane, interacțiuni cu funcționalitățile, informații despre discipline sau alte date de analiză.
           </PolicyParagraph>
         </PolicySection>
         <PolicySection title="4. Datele orarului și servicii terțe">
